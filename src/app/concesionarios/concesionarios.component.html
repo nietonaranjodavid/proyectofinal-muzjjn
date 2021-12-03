@@ -1,0 +1,108 @@
+<br /><br /><br /><br /><br /><br /><br />
+<div>
+  <h2>Mis Concesionarios</h2>
+  <form>
+    <table>
+      <tr>
+        <th>ID:</th>
+        <th>
+          <input type="number" min="1" pattern="{1,99999}" #concesionarioId />
+        </th>
+      </tr>
+      <tr>
+        <th>Nombre del Concesionario:</th>
+        <th>
+          <input type="text" required minlength="1" #concesionarioNombre />
+        </th>
+      </tr>
+      <tr>
+        <th>Municipio:</th>
+        <th>
+          <input
+            type="text"
+            required
+            minlength="1"
+            pattern="[Aa-Zz]"
+            #concesionarioMunicipio
+          />
+        </th>
+      </tr>
+      <tr>
+        <th>Dirección del Concesionario:</th>
+        <th>
+          <input type="text" required minlength="1" #concesionarioDireccion />
+        </th>
+      </tr>
+      <tr>
+        <th>Número de Teléfono:</th>
+        <th>
+          <input
+            type="text"
+            required
+            minlength="9"
+            maxlength="9"
+            pattern="{0,9}"
+            #concesionarioNumtelefono
+          />
+        </th>
+      </tr>
+      <br />
+      <tr>
+        <th colspan="2">
+          <button
+            (click)="
+              add(
+                concesionarioId.value,
+                concesionarioNombre.value,
+                concesionarioMunicipio.value,
+                concesionarioDireccion.value,
+                concesionarioNumtelefono.value
+              );
+              concesionarioNombre.value = '';
+              concesionarioMunicipio.value = '';
+              concesionarioDireccion.value = '';
+              concesionarioNumtelefono.value = ''
+            "
+          >
+            Añadir Concesionario
+          </button>
+        </th>
+      </tr>
+      <tr>
+        <th colspan="2">
+          <h5>Todos los campos son requeridos</h5>
+        </th>
+      </tr>
+    </table>
+  </form>
+
+  <table class="concesionarios">
+    <tr>
+      <th>Nombre</th>
+      <th>Municipio</th>
+      <th>Dirección</th>
+      <th>Número Teléfono</th>
+      <th>ID</th>
+    </tr>
+    <tr *ngFor="let concesionario of concesionarios">
+      <th>
+        <a routerLink="/detail2/{{ concesionario._nombre }}">
+          {{ concesionario._nombre }}
+        </a>
+      </th>
+      <th>{{ concesionario._municipio }}</th>
+      <th>{{ concesionario._direccion }}</th>
+      <th>{{ concesionario._numtelefono }}</th>
+      <th>{{ concesionario._id }}</th>
+      <th>
+        <button
+          class="delete"
+          title="delete concesionario"
+          (click)="delete(concesionario)"
+        >
+          x
+        </button>
+      </th>
+    </tr>
+  </table>
+</div>

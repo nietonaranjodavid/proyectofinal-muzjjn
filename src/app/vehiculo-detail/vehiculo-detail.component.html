@@ -1,0 +1,80 @@
+<br /><br /><br /><br /><br /><br /><br /><br />
+<div *ngIf="vehiculo != undefined">
+  <h2>{{ vehiculo._modelo }} Details</h2>
+  <div>
+    <label
+      >Modelo:
+      <input
+        type="text"
+        required
+        minlength="1"
+        [(ngModel)]="vehiculo._modelo"
+        placeholder="{{ vehiculo._modelo }}"
+      />
+    </label>
+    <br />
+    <label
+      >Precio:
+      <input
+        type="number"
+        min="1"
+        pattern="{1,9999999999999}"
+        required
+        #vehiculoPrecio
+        [(ngModel)]="vehiculo._precio"
+        placeholder="precio"
+      />
+    </label>
+    <br />
+    <label
+      >Cantidad:
+      <input
+        type="number"
+        min="1"
+        max="10"
+        required
+        #vehiculoCantidad
+        [(ngModel)]="vehiculo._cantidad"
+        placeholder="cantidad"
+      />
+    </label>
+    <br />
+    <label
+      >Matriculacion:
+      <input
+        #vehiculoMatriculacion
+        [(ngModel)]="vehiculo._matriculacion"
+        placeholder="matriculacion"
+      />
+    </label>
+    <br />
+    <label
+      >Tipo:
+      <input
+        type="text"
+        pattern="[A-Z]{0,9}"
+        required
+        minlength="1"
+        maxlength="1"
+        #vehiculoTipo
+        [(ngModel)]="vehiculo._tipo"
+        placeholder="tipo"
+      />
+    </label>
+    <br />
+    <label
+      >Concesionario:
+      <input
+        type="text"
+        required
+        minlength="1"
+        #vehiculoConcesionario
+        [(ngModel)]="vehiculo._concesionario"
+        placeholder="concesionario"
+      />
+    </label>
+  </div>
+  <br />
+  <button (click)="goBack()">Volver</button>
+  <button (click)="save(vehiculoPrecio.value)">Guardar</button>
+</div>

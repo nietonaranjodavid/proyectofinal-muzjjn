@@ -1,0 +1,147 @@
+<br /><br /><br /><br /><br /><br /><br />
+
+<div *ngIf="concesionario != undefined">
+  <h2>{{ concesionario._nombre }} Details</h2>
+  <div>
+    <br />
+    <label
+      >Concesionario Nombre:
+      <input
+        type="text"
+        required
+        minlength="1"
+        #concesionarioNombre
+        [(ngModel)]="concesionario._nombre"
+        placeholder="{{ concesionario._nombre }}"
+      />
+    </label>
+    <br />
+    <label
+      >Municipio:
+      <input
+        type="text"
+        required
+        minlength="1"
+        pattern="[Aa-Zz]"
+        #concesionarioMunicipio
+        [(ngModel)]="concesionario._municipio"
+        placeholder="municipio"
+      />
+    </label>
+    <br />
+    <label
+      >Direccion:
+      <input
+        type="text"
+        required
+        minlength="1"
+        #concesionarioDireccion
+        [(ngModel)]="concesionario._direccion"
+        placeholder="direccion"
+      />
+    </label>
+    <br />
+    <label
+      >Número Teléfono:
+      <input
+        type="text"
+        required
+        minlength="9"
+        maxlength="9"
+        pattern="{0,9}"
+        #concesionarioNumtelefono
+        [(ngModel)]="concesionario._numtelefono"
+        placeholder="numtelefono"
+      />
+    </label>
+    <br />
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save(concesionarioMunicipio.value)">save</button>
+
+  <br /><br />
+  <h2>Vehiculos</h2>
+  <table class="vehiculos">
+    <tr>
+      <th>Modelo</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Matriculacion</th>
+      <th>Tipo</th>
+    </tr>
+    <tr *ngFor="let s of concesionario._vehiculos">
+      <td>{{ s._modelo }}</td>
+      <td>{{ s._precio }}</td>
+      <td>{{ s._matriculacion }}</td>
+      <td>{{ s._cantidad }}</td>
+      <td>{{ s._tipo }}</td>
+    </tr>
+  </table>
+  <h2>¿Desea añadir algún vehiculo más a {{ concesionario._nombre }}?</h2>
+  <table class="vehiculos">
+    <tr>
+      <th>ID:</th>
+      <th><input type="number" min="1" pattern="{1,99999}" #vehiculoId /></th>
+    </tr>
+    <tr>
+      <th>Modelo del vehiculo:</th>
+      <th><input type="text" required minlength="1" #vehiculoModelo /></th>
+    </tr>
+    <tr>
+      <th>Precio del vehiculo:</th>
+      <th>
+        <input
+          type="number"
+          min="1"
+          pattern="{1,9999999999999}"
+          required
+          #vehiculoPrecio
+        />
+      </th>
+    </tr>
+    <tr>
+      <th>Cantidad:</th>
+      <th><input type="number" min="1" max="10" #vehiculoCantidad /></th>
+    </tr>
+    <tr>
+      <th>Matriculacion:</th>
+      <th><input type="date" required #vehiculoMatriculacion /></th>
+    </tr>
+    <tr>
+      <th>Tipo:</th>
+      <th>
+        <input
+          type="text"
+          pattern="[A-Z]{0,9}"
+          required
+          minlength="1"
+          maxlength="1"
+          #vehiculoTipo
+        />
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <button
+          (click)="
+            add(
+              vehiculoId.value,
+              vehiculoModelo.value,
+              vehiculoPrecio.value,
+              vehiculoCantidad.value,
+              vehiculoMatriculacion.value,
+              vehiculoTipo.value
+            );
+            vehiculoModelo.value = '';
+            vehiculoPrecio.value = '';
+            vehiculoCantidad.value = '';
+            vehiculoMatriculacion.value = '';
+            vehiculoTipo.value = ''
+          "
+        >
+          Añadir
+        </button>
+      </th>
+    </tr>
+  </table>
+</div>

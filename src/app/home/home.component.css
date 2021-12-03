@@ -1,0 +1,103 @@
+p {
+  font-family: Lato;
+}
+
+img {
+  width: 60%;
+  height: 60%;
+  display: block;
+  margin: auto;
+}
+h1 {
+  color: #eaeaea;
+  text-align: center;
+  padding: 0%;
+  position: fixed;
+  top: 3%;
+}
+header {
+  font-size: 14px;
+  background-color: #24282b;
+  color: #fff;
+  padding: 17px;
+  min-height: 40px;
+  border-bottom: #1293d4 10px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #marca {
+  float: left;
+}
+
+header #marca h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+header .a,
+header .c a {
+  color: #1293d4;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #ccc;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+#menu li > a {
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  min-width: 100px;
+}
+#menu li > a:hover {
+  color: #000;
+  background-color: #eaeaea;
+}
+#menu > li {
+  float: left;
+  text-align: center;
+}
+#menu > li > ul {
+  display: none;
+}
+#menu > li:hover > ul {
+  display: block;
+}
+
+footer {
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  background-color: #128fce;
+  text-align: center;
+  left: 0;
+  right: 0;
+}

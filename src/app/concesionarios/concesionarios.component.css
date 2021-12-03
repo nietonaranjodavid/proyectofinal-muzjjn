@@ -1,0 +1,133 @@
+input:invalid {
+  box-shadow: 0 0 1px 1px red;
+}
+
+input:valid {
+  box-shadow: 0 0 2px 1px green;
+}
+input:focus:invalid {
+  box-shadow: none;
+}
+
+form {
+  text-align: justify;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  color: #12028d;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+
+.concesionarios {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 20em;
+}
+.concesionarios th {
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  background-color: #a6a1ce;
+  -webkit-border-radius: 20px 10px 50px 30px;
+}
+
+.concesionarios a {
+  color: rgb(68, 0, 255);
+  text-decoration: wavy;
+  position: relative;
+  width: 250px;
+  text-align: center;
+  background-color: #ffffff00;
+}
+
+.concesionarios a:hover {
+  color: rgb(0, 243, 81);
+}
+
+.concesionarios .badge {
+  display: inline-block;
+  font-size: small;
+  color: rgb(235, 6, 6);
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #006de2;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: 0.8em;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  background-color: rgb(65, 175, 102);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  font-family: Arial;
+  color: white;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+button.delete {
+  border-radius: 20px 10px 50px 30px;
+  width: 70%;
+  margin: 1px;
+  position: relative;
+  left: 1px;
+  top: 0px;
+  background-color: rgb(255, 0, 0) !important;
+  color: rgb(255, 255, 255);
+}
+
+.concesionario.precio {
+  position: relative;
+  left: 80px;
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.8em 0 0.8em;
+  background-color: #ff0000;
+  top: -4px;
+  height: 1.8em;
+  border-radius: 0 4px 4px 0;
+}
+table.concesionarios {
+  border-radius: 20px 10px 50px 30px;
+  -webkit-border-radius: 20px 10px 50px 30px;
+  -moz-border-radius: 20px 10px 50px 30px;
+  border: 28px inset navy;
+  width: 100%;
+}
+
+footer {
+  top: auto;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  background-color: #128fce;
+  text-align: center;
+  left: 0;
+  right: 0;
+}

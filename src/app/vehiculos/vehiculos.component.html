@@ -1,0 +1,121 @@
+<br /><br /><br /><br /><br /><br /><br />
+<h2>Vehiculos Disponibles</h2>
+<form>
+  <table>
+    <tr>
+      <th>ID:</th>
+      <th>
+        <input type="number" min="1" pattern="{1,99999}" required #vehiculoId />
+      </th>
+    </tr>
+    <tr>
+      <th>Nombre del vehiculo:</th>
+      <th>
+        <input type="text" required minlength="1" #vehiculoModelo />
+      </th>
+    </tr>
+    <tr>
+      <th>Precio del vehiculo:</th>
+      <th>
+        <input
+          type="number"
+          min="1"
+          pattern="{1,9999999999999}"
+          required
+          #vehiculoPrecio
+        />
+      </th>
+    </tr>
+    <tr>
+      <th>Cantidad:</th>
+      <th>
+        <input type="number" min="1" max="10" required #vehiculoCantidad />
+      </th>
+    </tr>
+    <tr>
+      <th>Matriculacion:</th>
+      <th><input type="date" required #vehiculoMatriculacion /></th>
+    </tr>
+    <tr>
+      <th>Tipo:</th>
+      <th>
+        <input
+          type="text"
+          pattern="[A-Z]{0,9}"
+          required
+          minlength="1"
+          maxlength="1"
+          #vehiculoTipo
+        />
+      </th>
+    </tr>
+    <tr>
+      <th>Concesionario:</th>
+      <th>
+        <input type="text" required minlength="1" #vehiculoConcesionario />
+      </th>
+    </tr>
+    <br />
+    <tr>
+      <th colspan="2">
+        <button
+          (click)="
+            add(
+              vehiculoId.value,
+              vehiculoModelo.value,
+              vehiculoPrecio.value,
+              vehiculoCantidad.value,
+              vehiculoMatriculacion.value,
+              vehiculoTipo.value,
+              vehiculoConcesionario.value
+            );
+            vehiculoModelo.value = '';
+            vehiculoPrecio.value = '';
+            vehiculoCantidad.value = '';
+            vehiculoMatriculacion.value = '';
+            vehiculoTipo.value = '';
+            vehiculoConcesionario.value = ''
+          "
+        >
+          Añadir vehiculo
+        </button>
+      </th>
+    </tr>
+    <tr>
+      <th colspan="2">
+        <h5>Todos los campos son requeridos</h5>
+      </th>
+    </tr>
+  </table>
+</form>
+<br />
+<table class="vehiculos">
+  <tr>
+    <th>Modelo</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+    <th>Matriculacion</th>
+    <th>Tipo</th>
+    <th>ID</th>
+    <th>Concesionario</th>
+    <th>Ventas</th>
+  </tr>
+  <tr *ngFor="let vehiculo of vehiculos">
+    <th>
+      <a routerLink="/detail/{{ vehiculo._modelo }}">
+        {{ vehiculo._modelo }}
+      </a>
+    </th>
+    <th>{{ vehiculo._precio }}</th>
+    <th>{{ vehiculo._cantidad }}</th>
+    <th>{{ vehiculo._matriculacion }}</th>
+    <th>{{ vehiculo._tipo }}</th>
+    <th>{{ vehiculo._id }}</th>
+    <th>{{ vehiculo._concesionario }}</th>
+    <th>
+      <button class="delete" title="delete vehiculo" (click)="delete(vehiculo)">
+        Vender
+      </button>
+    </th>
+  </tr>
+</table>

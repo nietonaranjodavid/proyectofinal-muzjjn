@@ -1,0 +1,129 @@
+h2 {
+  text-align: left;
+  color: #12028d;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+
+form {
+  text-align: justify;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vehiculos {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 20px;
+  width: 20em;
+  text-align: center;
+}
+.vehiculos th {
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  background-color: #a6a1ce;
+  -webkit-border-radius: 20px 10px 50px 30px;
+}
+.vehiculos td {
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  background-color: #a6a1ce;
+  -webkit-border-radius: 20px 10px 50px 30px;
+}
+
+.vehiculos a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 250px;
+}
+
+.vehiculos a:hover {
+  color: rgb(0, 255, 85);
+}
+
+.vehiculos .badge {
+  display: inline-block;
+  font-size: small;
+  color: rgb(235, 6, 6);
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: rgb(65, 175, 102);
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: 0.8em;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  background-color: rgb(65, 175, 102);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  font-family: Arial;
+  color: white;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+button.delete {
+  position: relative;
+  left: 1px;
+  top: 0px;
+  background-color: rgb(255, 0, 0) !important;
+  color: rgb(255, 255, 255);
+}
+
+.vehiculo.precio {
+  position: relative;
+  left: 80px;
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.8em 0 0.8em;
+  background-color: #ff0000;
+  top: -4px;
+  height: 1.8em;
+  border-radius: 0 4px 4px 0;
+}
+table.vehiculos {
+  font-family: Georgia, serif;
+  width: 60%;
+  text-align: center;
+}
+
+label {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 250px;
+}
+
+label > input {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 250px;
+  background-color: rgb(245, 250, 230);
+}
